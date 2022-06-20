@@ -51,4 +51,10 @@ public class MusteriServices {
     public void deleteMusteri(Long id) {
         musteriRepositories.delete(musteriRepositories.getById(id));
     }
+
+    public Optional<Musteri> getMusteri(String email) {
+       Optional<Musteri> dbMusteri= musteriRepositories.findByEmail(email);
+       if (dbMusteri.isEmpty()) return null;
+      else return dbMusteri;
+    }
 }
