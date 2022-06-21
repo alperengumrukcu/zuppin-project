@@ -20,5 +20,9 @@ public class Dosya {
     @Column
     private byte[] data;
     @ManyToOne
+    @JoinColumn(insertable = false,updatable = false)
     private Musteri musteri;
+
+    @Column(name = "musteri_customer_id")
+    private Long musteriId;
 }
